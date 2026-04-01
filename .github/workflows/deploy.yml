@@ -122,7 +122,7 @@ jobs:
 
     env:
       HOST: ${{ secrets.PROD_HOST }}
-      TARGET_DIR: /home/ubuntu/myapp
+      TARGET_DIR: /home/ubuntu/Multibranch_Nodejs_Webapp_AutoDeploy
 
     steps:
       - name: Download Artifact
