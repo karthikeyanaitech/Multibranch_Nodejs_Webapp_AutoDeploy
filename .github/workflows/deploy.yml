@@ -73,7 +73,7 @@ jobs:
       - name: Allow SSH
         run: |
           aws ec2 authorize-security-group-ingress \
-            --group-id ${{ secrets.SG_ID }} \
+              --group-id ${{ secrets.SG_ID }} \
             --protocol tcp \
             --port 22 \
             --cidr ${{ steps.ip.outputs.ip }}/32
@@ -112,7 +112,7 @@ jobs:
         if: always()
         run: |
           aws ec2 revoke-security-group-ingress \
-            --group-id ${{ secrets.SG_ID }} \
+              --group-id ${{ secrets.SG_ID }} \
             --protocol tcp \
             --port 22 \
             --cidr ${{ steps.ip.outputs.ip }}/32
@@ -148,7 +148,7 @@ jobs:
       - name: Allow SSH
         run: |
           aws ec2 authorize-security-group-ingress \
-            --group-id ${{ secrets.SG_ID_PROD }} \
+              --group-id ${{ secrets.SG_ID_PROD }} \
             --protocol tcp \
             --port 22 \
             --cidr ${{ steps.ip.outputs.ip }}/32
@@ -187,7 +187,7 @@ jobs:
         if: always()
         run: |
           aws ec2 revoke-security-group-ingress \
-            --group-id ${{ secrets.SG_ID }} \
+              --group-id ${{ secrets.SG_ID }} \
             --protocol tcp \
             --port 22 \
             --cidr ${{ steps.ip.outputs.ip }}/32
