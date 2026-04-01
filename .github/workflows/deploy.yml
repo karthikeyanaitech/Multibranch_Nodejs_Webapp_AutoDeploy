@@ -6,9 +6,6 @@ on:
       - main
       - qa
 
-env:
-  APP_NAME: myapp
-
 jobs:
 
 # ================= BUILD =================
@@ -50,7 +47,7 @@ jobs:
 
     env:
       HOST: ${{ secrets.QA_HOST }}
-      TARGET_DIR: /home/ubuntu/myapp
+      TARGET_DIR: /home/ubuntu/Multibranch_Nodejs_Webapp_AutoDeploy
 
     steps:
       - name: Download Artifact
