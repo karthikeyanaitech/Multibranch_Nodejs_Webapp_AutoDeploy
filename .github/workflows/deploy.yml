@@ -1,3 +1,33 @@
+name: MERN CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - qa
+
+env:
+  APP_NAME: myapp
+
+jobs:
+
+# ================= BUILD =================
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      artifact-name: build-files
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Backend install (sanity check)
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          npm install
+
       # Frontend build
       - name: Install & Build Frontend
         run: |
