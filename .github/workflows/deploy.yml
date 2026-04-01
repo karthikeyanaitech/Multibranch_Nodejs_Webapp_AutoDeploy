@@ -156,6 +156,7 @@ jobs:
           host: ${{ env.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWD }}
+          debug: true
           source: "dist/*"
           target: "${{ env.TARGET_DIR }}/frontend/dist"
 
